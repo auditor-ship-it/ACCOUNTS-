@@ -1,0 +1,63 @@
+.wrap {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 330px;
+  max-width: calc(100vw - 32px);
+}
+
+.toast {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-4);
+  padding: 13px 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  animation: slidein var(--dur-base) var(--ease-spring);
+}
+
+@keyframes slidein {
+  from { opacity: 0; transform: translateX(24px) scale(.97); }
+  to { opacity: 1; transform: none; }
+}
+
+.icon { flex: none; margin-top: 1px; }
+.message { margin: 0; font-size: 12.5px; color: var(--text); line-height: 1.5; flex: 1; }
+
+.close {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 2px;
+  flex: none;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  transform-origin: left;
+  animation: drain 4s linear forwards;
+}
+@keyframes drain { to { transform: scaleX(0); } }
+
+.success .icon, .success .bar { color: var(--success); background: var(--success); }
+.success .icon { background: none; }
+.error .icon, .error .bar { color: var(--error); background: var(--error); }
+.error .icon { background: none; }
+.warn .icon, .warn .bar { color: var(--warn); background: var(--warn); }
+.warn .icon { background: none; }
+.info .icon, .info .bar { color: var(--info); background: var(--info); }
+.info .icon { background: none; }

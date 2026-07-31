@@ -1,0 +1,34 @@
+.empty {
+  font-size: 13px;
+  color: var(--text-2);
+  text-align: center;
+  padding: 20px 0;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.item {
+  border-left: 3px solid var(--accent);
+  padding: 6px 12px;
+  background: var(--surface-2);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-3);
+  margin-bottom: 4px;
+}
+
+.date { font-weight: 700; }
+
+.remark { font-size: 13px; color: var(--text); }

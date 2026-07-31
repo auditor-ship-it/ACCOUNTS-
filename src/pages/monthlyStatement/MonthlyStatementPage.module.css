@@ -1,0 +1,117 @@
+.ctrlBar { margin-bottom: 14px; }
+
+.search {
+  width: 100%;
+  max-width: 340px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.kpiCard {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kpiLabel { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-3); }
+.kpiValue { font-size: 22px; font-weight: 800; color: var(--text); }
+.kpiValueBlue { font-size: 22px; font-weight: 800; color: var(--accent); }
+.kpiValueGreen { font-size: 22px; font-weight: 800; color: var(--success); }
+.kpiValueRed { font-size: 22px; font-weight: 800; color: var(--error); }
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.scrollWrap {
+  overflow: auto;
+  max-height: calc(100vh - 380px);
+  min-height: 240px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+
+.pivotTable {
+  border-collapse: collapse;
+  font-size: 12px;
+  white-space: nowrap;
+  width: max-content;
+  min-width: 100%;
+}
+
+.pivotTable th, .pivotTable td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pivotTable thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700;
+  z-index: 1;
+}
+:root[data-theme='dark'] .pivotTable thead th { background: var(--surface-2); }
+
+.monthHead { text-align: center; background: linear-gradient(135deg, var(--surface-2), var(--surface-2)) !important; }
+.totalHead { text-align: center; background: linear-gradient(135deg, var(--accent-soft), var(--accent-soft)) !important; border-left: 3px solid var(--accent-soft); }
+
+.subHeadBilled { text-align: right; color: var(--accent) !important; }
+.subHeadReceived { text-align: right; color: var(--success) !important; }
+
+.stickyLeft {
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  z-index: 2;
+  text-align: left;
+  font-weight: 700;
+}
+.stickyLeft2 {
+  position: sticky;
+  left: 150px;
+  background: var(--surface);
+  z-index: 2;
+  text-align: left;
+  color: var(--text-2);
+}
+thead .stickyLeft, thead .stickyLeft2 { z-index: 3; }
+
+.containerCell { text-transform: uppercase; letter-spacing: .3px; }
+
+.amtBilled { text-align: right; color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
+.amtReceived { text-align: right; color: var(--success); font-weight: 600; font-variant-numeric: tabular-nums; }
+.amtOutstanding { text-align: right; color: var(--error); font-weight: 900; font-variant-numeric: tabular-nums; }
+.amtSettled { text-align: right; color: var(--success); font-weight: 800; font-variant-numeric: tabular-nums; }
+.dash { color: var(--line-strong); }
+
+.totalCol { border-left: 3px solid var(--accent-soft); font-weight: 800; }
+
+.grandRow td {
+  background: var(--surface-2);
+  border-top: 2px solid var(--accent-soft);
+  font-weight: 900;
+}
+:root[data-theme='dark'] .grandRow td { background: var(--surface-2); }

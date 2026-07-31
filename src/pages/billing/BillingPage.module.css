@@ -1,0 +1,91 @@
+.tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-2);
+  border-radius: var(--r-sm);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab:hover { color: var(--text); }
+
+.tabActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.search {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.fetchBtn { margin-left: auto; }
+
+.bulkBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+}
+
+:root[data-theme='dark'] .bulkBar { background: var(--surface-2); }
+
+.bulkCount {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-2);
+  margin-right: auto;
+}
+
+.actionCell {
+  display: flex;
+  gap: 6px;
+}
+
+.firstCell {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.newBadge {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 2px 6px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  background: var(--success);
+  color: var(--on-accent);
+  border-radius: 4px;
+  vertical-align: middle;
+}
