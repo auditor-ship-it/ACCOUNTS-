@@ -1,0 +1,29 @@
+# Runs on every branch push and every PR to main. Catches breakage before it
+# can reach main.
+name: CI
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    name: Lint, build and backend syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Install frontend deps
+        run: npm ci
+      - name: Lint frontend
+        run: npm run lint
+      - name: Build frontend
+        run: npm run build
+      - name: Install backend deps
+        run: npm ci --prefix backend
+      - name: Backend syntax check
+        run: find backend/src -name '*.js' -print0 | xargs -0 -n1 node --check
